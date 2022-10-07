@@ -1,13 +1,22 @@
 package histoire;
 
-import personnages.Gaulois;
-import personnages.Romain;
 
 public class Scenario {
 
+
+
 public static void main(String[] args) {
-	Gaulois Asterix = new Gaulois("Asterix", 8);
-	Romain Minus = new Romain("Minus",6);
+	personnages.Gaulois Asterix = new personnages.Gaulois("Asterix", 8);
+	personnages.Romain Minus = new personnages.Romain("Minus",6);
+	personnages.Druide panoramix = new personnages.Druide("panoramix",5,10);
+	personnages.Gaulois Obélix =new personnages.Gaulois("Obélix",18);
+	panoramix.parler("je vais aller preparer une petite potion...");
+	panoramix.preparerPotion();
+	panoramix.Booster(Obélix);
+	Obélix.parler("par Bélénos , ce n'est pas juste!");
+	
+	panoramix.Booster(Asterix);
+	
 	Asterix.parler("Bonjour à tous");
 	Minus.parler("UN GAU... UN GAUGAU...");
 	for(int i =0 ;i < 3; i++){
