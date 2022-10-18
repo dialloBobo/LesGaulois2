@@ -12,10 +12,10 @@ public static void main(String[] args) {
 	personnages.Gaulois Obélix =new personnages.Gaulois("Obélix",18);
 	panoramix.parler("je vais aller preparer une petite potion...");
 	panoramix.preparerPotion();
-	panoramix.Booster(Obélix);
+	panoramix.booster(Obélix);
 	Obélix.parler("par Bélénos , ce n'est pas juste!");
 	
-	panoramix.Booster(Asterix);
+	panoramix.booster(Asterix);
 	
 	Asterix.parler("Bonjour à tous");
 	Minus.parler("UN GAU... UN GAUGAU...");

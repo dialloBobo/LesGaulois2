@@ -41,12 +41,12 @@ parler("Bonjour,  je  suis  le  druide  "  +  nom  +  "  et  ma  potion  peut  a
 
 	}
 	
-	public void Booster(Gaulois gaulois){
+	public void booster(Gaulois gaulois){
 		if (gaulois.getNom()==("Obélix")){
 			parler("Non ,Obélix !... tu n'auras pas de potion magique");
 		}
 		else {
-			gaulois.BoirePotion(forcePotion);
+			gaulois.boirePotion(forcePotion);
 		}
 				
 		
