@@ -6,7 +6,7 @@ public class Gaulois {
 	// private int force;
 	private int force;
 	private int nbTrophees;
-	private equipement[] trophees = new equipement[100];
+	private Equipement[] trophees = new Equipement[100];
 
 	public Gaulois(String nom, int force) {
 		this.nom = nom;
@@ -36,10 +36,10 @@ public class Gaulois {
 
 	public void frapper(Romain romain) {
 		System.out.println(nom + " envoie un grand coup dans la mâchoire de " + romain.getNom());
-		equipement[] tropheesGagnes = romain.recevoirCoup((force / 3) * effetPotion);
+		Equipement[] tropheesGagnes = romain.recevoirCoup((force / 3) * effetPotion);
 		for (int i = 0; tropheesGagnes != null && i < tropheesGagnes.length; i++, nbTrophees++) {
 			trophees[nbTrophees] = tropheesGagnes[i];
-			
+
 		}
 	}
 
@@ -53,6 +53,41 @@ public class Gaulois {
 		return "Gaulois [nom=" + nom + ", force=" + force + "]";
 	}
 
+	public void faireUneDonnation(Musee musee) {
+
+		if (trophees != null) {
+			StringBuilder bld = new StringBuilder("Je donne au musee tous mes trophees:");
+
+			for (int i = 0; i < nbTrophees; i++) {
+				bld.append("\n-" + trophees[i].toString());
+			}
+			String texte = bld.toString();
+
+			parler(texte);
+		}
+
+	}
+
+	public String extraireInstructionsCaml() {
+
+		StringBuilder bld = new StringBuilder("let musee = [\n");
+
+		for (int i = 0; i < nbTrophees; i++) {
+			bld.append("\"" + " asterix " + "\",");
+			bld.append("\"" + trophees[i].toString() + "\"; ");
+			if (i == nbTrophees - 1)
+
+				bld.append(" ");
+			bld.append("\n");
+
+		}
+		String texte = bld.toString();
+		texte += "]";
+
+		return texte;
+
+	}
+
 	public static void main(String[] args) {
 
 		Gaulois asterix = new Gaulois("asterix", 8);
@@ -62,6 +97,5 @@ public class Gaulois {
 		System.out.println("le gaulois " + asterix.getNom() + " vient d'atterir sur terre merci à tous.");
 		asterix.frapper(beta);
 		asterix.boirePotion(6);
-
 	}
 }
