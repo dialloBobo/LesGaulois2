@@ -65,26 +65,8 @@ public class Gaulois {
 
 			parler(texte);
 		}
-
-	}
-
-	public String extraireInstructionsCaml() {
-
-		StringBuilder bld = new StringBuilder("let musee = [\n");
-
-		for (int i = 0; i < nbTrophees; i++) {
-			bld.append("\"" + " asterix " + "\",");
-			bld.append("\"" + trophees[i].toString() + "\"; ");
-			if (i == nbTrophees - 1)
-
-				bld.append(" ");
-			bld.append("\n");
-
-		}
-		String texte = bld.toString();
-		texte += "]";
-
-		return texte;
+		
+		
 
 	}
 
