@@ -6,7 +6,7 @@ import personnages.Equipement;
 import personnages.Gaulois;
 import personnages.Musee;
 import personnages.Romain;
-//import villagegaulois.Musee;
+//import village
 
 public class Scenario {
 
@@ -33,10 +33,10 @@ public class Scenario {
 
 //		Partie a decommenter
 
-		Musee louvr = new Musee();
-		//asterix.faireUneDonnation(musee);
+		Musee musee = new Musee();
+		asterix.faireUneDonnation(musee);
 		// test
-		System.out.println(louvr.extraireInstructionsCaml());
+		System.out.println(musee.extraireInstructionsCaml());
 
 	}
 }

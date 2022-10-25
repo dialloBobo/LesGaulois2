@@ -12,25 +12,23 @@ public class Musee {
 
 	
 	public String extraireInstructionsCaml(){
+		StringBuilder bld = new StringBuilder( );
 
-	StringBuilder bld = new StringBuilder("let musee = [\n");
 
-		for (int i = 0; i < nbTrophees; i++) {
-			bld.append("\"" + trophees[i].donnerNom() + "\",");
-			bld.append("\"" + trophees[i].getEquipement() + "\"; ");
-			if (i == nbTrophees - 1)
-
-				bld.append(" ");
+		for (int i = 0; i < nbTrophees; i++){
+			bld.append("     \"" + trophees[i].donnerNom()+ "\",");
+			bld.append("\"" + trophees[i].getEquipement().toString()+ "\"");
+			if (i!=nbTrophees-1) {
+				bld.append(" ;");
+			}
 			bld.append("\n");
-
+			
 		}
-		String texte = bld.toString();
-		texte += "]";
-
-		return texte;
-
-	}
+		
+		String texte =bld.toString();
+		
+		return "let musee=[\n" + texte +"]";
+		
+			}
 
 }
-
-

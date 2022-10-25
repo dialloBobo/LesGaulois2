@@ -53,22 +53,24 @@ public class Gaulois {
 		return "Gaulois [nom=" + nom + ", force=" + force + "]";
 	}
 
-	public void faireUneDonnation(Musee musee) {
+	public void faireUneDonnation(Musee musee){
 
 		if (trophees != null) {
 			StringBuilder bld = new StringBuilder("Je donne au musee tous mes trophees:");
-
+			
 			for (int i = 0; i < nbTrophees; i++) {
 				bld.append("\n-" + trophees[i].toString());
+				musee.donnerTrophees(this, trophees[i]);
 			}
 			String texte = bld.toString();
 
 			parler(texte);
 		}
-		
-		
+			
 
 	}
+	
+
 
 	public static void main(String[] args) {
 
